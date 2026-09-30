@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>38TH MILLENNIAL MEET</title>
+</head>
+
+<body>
+
+<h1>38TH MILLENNIAL<br>MEET</h1>
+
+<p>DATE: 01 November 2026</p>
+
+<p>VENUE: Your Venue Name<br>
+Your Location</p>
+
+<hr>
+
+<h3>REGISTRATION</h3>
+
+<label>NAME</label><br>
+<input type="text" id="name" placeholder="Your full name">
+<br><br>
+
+<label>USER NAME</label><br>
+<input type="text" id="username" placeholder="Your unique user name">
+<br><br>
+
+<label>BASE CLUB</label><br>
+<select>
+    <option>Select your base club</option>
+    <option>Millenial</option>
+    <option>Genx</option>
+    <option>Lambo</option>
+</select>
+
+<br><br>
+
+<label>ARE YOU WILLING TO ATTEND THE MEETING?</label><br>
+<input type="radio" name="attend"> Yes
+<input type="radio" name="attend"> No
+
+<br><br>
+
+<label>NIGHT STAY?</label><br>
+<input type="radio" name="stay"> Yes
+<input type="radio" name="stay"> No
+
+<br><br>
+
+<button type="button" onclick="registerForm()">REGISTER FOR THE MEET</button>
+
+<script>
+function registerForm() {
+
+    let name = document.getElementById("name").value;
+    let username = document.getElementById("username").value;
+
+    alert("Welcome " + name + "!\nYour User Name is: " + username);
+}
+</script>
+
+</body>
+</html>
