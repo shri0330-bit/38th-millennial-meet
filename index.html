@@ -117,16 +117,16 @@ function registerForm() {
     formData.append("nightstay", stay);
 
     fetch(scriptURL, {
-        method: "POST",
-        body: formData
-    })
-    .then(response => response.text())
-    .then(result => {
-        alert("Registration successful!\n\nThank you " + name + "!");
-    })
-    .catch(error => {
-        alert("Registration failed. Please try again.");
-        console.error(error);
+    method: "POST",
+    mode: "no-cors",
+    body: formData
+})
+.then(() => {
+    alert("Registration successful!\n\nThank you " + name + "!");
+})
+.catch(error => {
+    alert("Registration failed. Please try again.");
+});
     });
 }
 </script>
