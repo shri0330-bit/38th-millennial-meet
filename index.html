@@ -2,60 +2,108 @@
 <html>
 <head>
     <title>38TH MILLENNIAL MEET</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            box-sizing: border-box;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            margin-top: 20px;
+            cursor: pointer;
+        }
+    </style>
 </head>
 
 <body>
 
 <h1>38TH MILLENNIAL<br>MEET</h1>
 
-<p>DATE: 01 November 2026</p>
+<p><strong>DATE:</strong> 01 November 2026</p>
 
-<p>VENUE: Your Venue Name<br>
-Your Location</p>
+<p>
+<strong>VENUE:</strong> Your Venue Name<br>
+Your Location
+</p>
 
 <hr>
 
-<h3>REGISTRATION</h3>
+<h2>REGISTRATION</h2>
 
 <label>NAME</label><br>
 <input type="text" id="name" placeholder="Your full name">
+
 <br><br>
 
 <label>USER NAME</label><br>
 <input type="text" id="username" placeholder="Your unique user name">
+
 <br><br>
 
 <label>BASE CLUB</label><br>
-<select>
-    <option>Select your base club</option>
-    <option>Millenial</option>
-    <option>Genx</option>
-    <option>Lambo</option>
+<select id="baseclub">
+    <option value="">Select your base club</option>
+    <option>Chennai</option>
+    <option>Bangalore</option>
+    <option>Coimbatore</option>
 </select>
 
 <br><br>
 
-<label>ARE YOU WILLING TO ATTEND THE MEETING?</label><br>
-<input type="radio" name="attend"> Yes
-<input type="radio" name="attend"> No
+<label>ARE YOU WILLING TO ATTEND THE MEETING?</label>
+<br>
+<input type="radio" name="attend" value="Yes"> Yes
+<input type="radio" name="attend" value="No"> No
 
 <br><br>
 
-<label>NIGHT STAY?</label><br>
-<input type="radio" name="stay"> Yes
-<input type="radio" name="stay"> No
+<label>NIGHT STAY?</label>
+<br>
+<input type="radio" name="stay" value="Yes"> Yes
+<input type="radio" name="stay" value="No"> No
 
 <br><br>
 
-<button type="button" onclick="registerForm()">REGISTER FOR THE MEET</button>
+<button type="button" onclick="registerForm()">
+    REGISTER FOR THE MEET
+</button>
 
 <script>
 function registerForm() {
 
     let name = document.getElementById("name").value;
     let username = document.getElementById("username").value;
+    let baseclub = document.getElementById("baseclub").value;
 
-    alert("Welcome " + name + "!\nYour User Name is: " + username);
+    let attend = document.querySelector('input[name="attend"]:checked');
+    let stay = document.querySelector('input[name="stay"]:checked');
+
+    attend = attend ? attend.value : "Not selected";
+    stay = stay ? stay.value : "Not selected";
+
+    alert(
+        "Welcome " + name +
+        "!\nUser Name: " + username +
+        "\nBase Club: " + baseclub +
+        "\nAttending: " + attend +
+        "\nNight Stay: " + stay
+    );
 }
 </script>
 
